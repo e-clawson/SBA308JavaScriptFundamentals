@@ -31,6 +31,7 @@ const CourseInfo = {
       }
     ]
   };
+  console.log(AssignmentGroup)
   
   // The provided learner submission data.
   const LearnerSubmissions = [
@@ -77,14 +78,28 @@ const CourseInfo = {
   ];
   console.log(LearnerSubmissions)
   
-  function getLearnerData(course, ag, LearnerSubmissions) {
+//   function getLearnerData(course, ag, LearnerSubmissions) {
     //step 1 - get the learner's id 
     let studentId = LearnerSubmissions[0].learner_id
     console.log(studentId)
-  }
-  const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
-  console.log(result)
+    let weight = AssignmentGroup.group_weight
+    console.log(weight)
+    let score  = LearnerSubmissions[0].submission.score
+    let weightedAvg = (score * (weight/100))
+    console.log(weightedAvg)
+    
+    
+//   }
+    // get the total weighted average of ALL assignments 
+    // weighted average works like this: (score(weight)) + (score(weight)) = weighted average 
+    // isolate the assignmentID and group_weight from AssignmentGroup
+    // isolate the student score from Learner submissions 
+    //use these to calculate the weighted average - (student_score(group_weight)) for each assignment 
+    // add these together to get the weighted average 
 
+//   const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
+//   console.log(result)
+//   }
 
 //   function getLearnerData(course, ag, submissions) {
 //     // here, we would process this data to achieve the desired result. -- this is an example of the result -So the return value should be an array containing object(s)
@@ -142,5 +157,4 @@ const CourseInfo = {
   
 //   const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
   
-//   console.log(result);
-  
+  console.log(result);
