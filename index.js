@@ -77,7 +77,8 @@ const CourseInfo = {
   ];
   
   function getLearnerData(course, ag, submissions) {
-    // here, we would process this data to achieve the desired result. -- this is an example of the result 
+    // here, we would process this data to achieve the desired result. -- this is an example of the result -So the return value should be an array containing object(s)
+    // want to analyze the data and return a new result based on the data provided 
     const result = [
       {
         id: 125,

@@ -85,6 +85,9 @@ Your goal is to analyze and transform this data such that the output of your pro
     // if an assignment is not yet due, it should not be included in either
     // the average or the keyed dictionary of scores
 }
+<!-- focus first on getting this to work before looking at the extra part  -->
+<!-- 80% of the assignments are able to be met by using the correct syntax 
+and having an application that runs without errors - so focus on that - the extra 20% is getting it to give the correct return -->
 
 If an AssignmentGroup does not belong to its course (mismatching course_id), your program should throw an error, letting the user know that the input was invalid. Similar data validation should occur elsewhere within the program.
 
