@@ -113,7 +113,8 @@ const CourseInfo = {
             console.log(studentGrades)
         }
     }
-    let totalPossible = []; 
+
+    let totalPossible = []; //array of all the possible points taken from AssignmentGroup
     for (let i = 0; i < AssignmentGroup.assignments.length; i++) {
         let currentGrade = AssignmentGroup.assignments[i].points_possible;
         if (currentGrade == AssignmentGroup.assignments[i].points_possible) {
@@ -123,8 +124,14 @@ const CourseInfo = {
         }
     }
 
-        let gradeSum = 0
-        for (let i=0; i <studentGrades.length; i++) {
+    let scoreSum = 0 //total possible points for all assignments 
+    for (let i = 0; i < totalPossible.length; i++) {
+        scoreSum += totalPossible[i]
+    } 
+    console.log(scoreSum) // this is currently correct 
+
+        let gradeSum = 0 //total points for all assignments for one student 
+        for (let i = 0; i <studentGrades.length; i++) {
             gradeSum += studentGrades[i]
         }
         console.log(gradeSum) // right now returns 130 which is all of the grades for all the student assignments
