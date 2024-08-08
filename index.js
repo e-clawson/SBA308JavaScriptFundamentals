@@ -80,14 +80,72 @@ const CourseInfo = {
   
 //   function getLearnerData(course, ag, LearnerSubmissions) {
     //step 1 - get the learner's id 
-    let studentId = LearnerSubmissions[0].learner_id
-    console.log(studentId)
+    // let studentId = LearnerSubmissions.find[0].learner_id
+    // console.log(studentId)
+
+    // do something to get an array of just each student's id once (done - studentIds)
+    //(could use arr.forEach with some kind of .map and or .filter)
+    //then I need to feed that into the next step which searches by each id 
+    //for the grades and then does the weighted avg for each grade 
+
+    Ids = LearnerSubmissions.map(obj => obj.learner_id)
+    console.log(Ids)
+    
+    function removeDuplicates(Ids) {
+        let unique = [];
+        Ids.forEach(element => {
+            if (!unique.includes(element)) {
+                unique.push(element);
+            }
+        });
+        return unique;
+    }
+    let studentIds = removeDuplicates(Ids)
+    console.log(studentIds)
+
+    // 
+    let studentGrades = [];
+    for (let i = 0; i < Ids.length; i++) {
+        let currentStudent = Ids[i];
+        if (currentStudent == LearnerSubmissions[i].learner_id) {
+            let score = LearnerSubmissions[i].submission.score;
+            studentGrades.push(score);
+            console.log(studentGrades)
+        }
+    }
+    let totalPossible = []; 
+    for (let i = 0; i < AssignmentGroup.assignments.length; i++) {
+        let currentGrade = AssignmentGroup.assignments[i].points_possible;
+        if (currentGrade == AssignmentGroup.assignments[i].points_possible) {
+            let grade = AssignmentGroup.assignments[i].points_possible;
+            totalPossible.push(grade);
+            console.log(totalPossible)
+        }
+    }
+
+        let gradeSum = 0
+        for (let i=0; i <studentGrades.length; i++) {
+            gradeSum += studentGrades[i]
+        }
+        console.log(gradeSum) // right now returns 130 which is all of the grades for all the student assignments
+        //it works but its recieving the wrong input from studentGrades. Once Studentgrades is fixed this will work 
+
+
+   
+   
+
+    //now I need to make something that says 
+    //look through each instance, and if learner_id = x 
+    //then find the submission score and multiply it by the weight 
+    //(assignmentgroup.weight)
+    //and then add that to other scores(weight)
+    //then print out result of adding all the scores(weight)
+
     let weight = AssignmentGroup.group_weight
     console.log(weight)
     let score  = LearnerSubmissions[0].submission.score
-    let weightedAvg = (score * (weight/100))
+    // let weightedAvg = (score * (weight/100))
     console.log(weightedAvg)
-    
     
 //   }
     // get the total weighted average of ALL assignments 
