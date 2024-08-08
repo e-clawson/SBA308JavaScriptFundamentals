@@ -137,6 +137,12 @@ const CourseInfo = {
         console.log(gradeSum) // right now returns 130 which is all of the grades for all the student assignments
         //it works but its recieving the wrong input from studentGrades. Once Studentgrades is fixed this will work 
 
+    function studentWeightedAvg(scoreSum,gradeSum) {
+        return gradeSum/scoreSum
+        //need to learn how to turn this into a percentage 
+    }
+    console.log(studentWeightedAvg(scoreSum,gradeSum))
+
 
    
    
@@ -152,7 +158,7 @@ const CourseInfo = {
     console.log(weight)
     let score  = LearnerSubmissions[0].submission.score
     // let weightedAvg = (score * (weight/100))
-    console.log(weightedAvg)
+   
     
 //   }
     // get the total weighted average of ALL assignments 
@@ -222,4 +228,4 @@ const CourseInfo = {
   
 //   const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
   
-  console.log(result);
+//   console.log(result);
