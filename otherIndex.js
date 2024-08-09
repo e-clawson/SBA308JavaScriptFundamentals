@@ -109,7 +109,11 @@ for(let i=0; i<LearnerSubmissions.length; ++i){
 console.log("studentGradessorted", studentGradesSorted)
 
 function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions, assignmentsInfo, studentGradesSorted) {
-       let finalArray = studentGradesSorted.map((obj) => {
+    
+    
+
+    let finalArray = studentGradesSorted.map((obj) => {
+            let assignmentObj = {}
             console.log(obj)
             let gradeSum = 0 //total points for all assignments for one student 
             for (let i = 0; i <obj.length; i++) {
@@ -124,13 +128,23 @@ function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions, assignm
             console.log("assignmentpoint", assignmentPointSum)
     
         let finalAvg = Math.round((gradeSum / assignmentPointSum) * 100)
-    
+        console.log(obj[0].assignment_id)
+        console.log(obj[0].submission.score)
         console.log(finalAvg)
+
+        let score = obj.forEach(submission => {
+            let assignmentWithMatchingIdToSubmissionAssignmentId = assignmentsInfo.find(assignment => assignment.assignment_id === submission.assignment_id)
+
+            if (assignmentWithMatchingIdToSubmissionAssignmentId) {
+               let assignmentScore = (submission.submission.score / assignmentWithMatchingIdToSubmissionAssignmentId.points_possible)
+               assignmentObj[submission.assignment_id] = assignmentScore
+            }
+    });
+
         return {
             learner_id: obj[0].learner_id,
-            avg: finalAvg
-
-
+            avg: finalAvg,
+            assignments: assignmentObj
         }
         });
         return finalArray
