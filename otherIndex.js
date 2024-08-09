@@ -108,28 +108,6 @@ for(let i=0; i<LearnerSubmissions.length; ++i){
 
 console.log("studentGradessorted", studentGradesSorted)
 
-function avg (assignmentsInfo, studentGradesSorted) {
-    studentGradesSorted.map((obj) => {
-        console.log(obj)
-        let gradeSum = 0 //total points for all assignments for one student 
-        for (let i = 0; i <obj.length; i++) {
-            gradeSum += obj[i].submission.score
-        }
-        console.log(gradeSum)
-
-        let assignmentPointSum = 0
-        assignmentsInfo.forEach((obj) => {
-            assignmentPointSum += obj.points_possible
-        })
-        console.log("assignmentpoint", assignmentPointSum)
-
-    let finalAvg = gradeSum / assignmentPointSum
-
-    console.log(finalAvg)
-    })
-}
-avg(assignmentsInfo, studentGradesSorted);
-
 function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions, assignmentsInfo, studentGradesSorted) {
        let finalArray = studentGradesSorted.map((obj) => {
             console.log(obj)
@@ -145,28 +123,17 @@ function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions, assignm
             })
             console.log("assignmentpoint", assignmentPointSum)
     
-        let finalAvg = gradeSum / assignmentPointSum
+        let finalAvg = Math.round((gradeSum / assignmentPointSum) * 100)
     
         console.log(finalAvg)
         return {
             learner_id: obj[0].learner_id,
             avg: finalAvg
-            
+
+
         }
         });
         return finalArray
-
-    // let finalStudentObject = studentGradesSorted.map((studentArray) => {
-        
-    //     let studentArrayObject = {
-    //         student_id: studentArray.id
-    //         // weighted_avg: avg()
-
-    //     }
-    //     console.log(finalStudentObject)
-    //     console.log(studentArrayObject)
-    // })
-
 };
 
 console.log(getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions, assignmentsInfo, studentGradesSorted));
