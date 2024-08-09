@@ -106,18 +106,37 @@ for(let i=0; i<LearnerSubmissions.length; ++i){
     studentGradesSorted.push(studentGradeInfo)
 }
 
-console.log("newDataArr", studentGradesSorted)
+console.log("studentGradessorted", studentGradesSorted)
 
-function avg (assignmentsInfo, studentGradesSorted) {
-    let topNumber = studentGradesSorted.map
-}
+// function avg (assignmentsInfo, studentGradesSorted) {
+    studentGradesSorted.map((obj) => {
+        console.log(obj)
+        let gradeSum = 0 //total points for all assignments for one student 
+        for (let i = 0; i <obj.length; i++) {
+            gradeSum += obj[i].submission.score
+        }
+        console.log(gradeSum)
+    })
 
+    let assignmentPointSum = 0
+        assignmentsInfo.forEach((obj) => {
+            assignmentPointSum += obj.points_possible
+        })
+        console.log(assignmentPointSum)
+
+    
+
+
+// }
 
 
 
 function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions, assignmentsInfo, studentGradesSorted) {
    
     let finalStudentObject = studentGradesSorted.map((studentArray) => {
+        let topnumber = studentGradesSorted.forEach(element => {
+            console.log(element)
+        });
         let studentArrayObject = {
             student_id: studentArray.id
         }
