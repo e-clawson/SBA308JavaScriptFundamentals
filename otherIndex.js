@@ -78,6 +78,8 @@ const LearnerSubmissions = [
 ];
 console.log(LearnerSubmissions)
 
+//assignmentsInfo gets all the necessary information for later from assignments into an array of objects
+
 let assignmentsInfo = AssignmentGroup.assignments.map((assignment) => {
     let assignmentObject = {
         assignment_id: assignment.id,
@@ -88,11 +90,7 @@ let assignmentsInfo = AssignmentGroup.assignments.map((assignment) => {
 })
 console.log("assignmentsInfo", assignmentsInfo)
 
-// let gradesInfo = LearnerSubmissions.map((submissionObj) => {
-//         (submissionObj.learner_id === 125){
-//                let newObj =
-//         })
-//     })
+//studentGradesSorted gets all the student grade info sorted by student 
 
 let studentGradesSorted = [];
 
@@ -103,38 +101,28 @@ for(let i=0; i<LearnerSubmissions.length; ++i){
 
     while(i < LearnerSubmissions.length-1 && LearnerSubmissions[i].learner_id === LearnerSubmissions[i+1].learner_id) {
         ++i
-        dataItem.push(LearnerSubmissions[i]);
+       studentGradeInfo.push(LearnerSubmissions[i]);
     }
     studentGradesSorted.push(studentGradeInfo)
 }
 
 console.log("newDataArr", studentGradesSorted)
 
-//     let submissionObject = {
-//         learner_id: submission.learner_id,
-//         // learner_submissions: 
-//     }
-//     return (submissionObject)
-// })
-console.log("submissionObject", gradesInfo)
+function avg (assignmentsInfo, studentGradesSorted) {
+    let topNumber = studentGradesSorted.map
+}
 
 
 
- 
 
-
-
-function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions) {
-    function createStudentObjects(Ids) {
-        let students = {};
-        Ids.forEach(id => {
-            object = {
-                student_id: id,
-            }
-        console.log(object)
-        })
-        return students
-
-    }
+function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions, assignmentsInfo, studentGradesSorted) {
+   
+    let finalStudentObject = studentGradesSorted.map((studentArray) => {
+        let studentArrayObject = {
+            student_id: studentArray.id
+        }
+        console.log(finalStudentObject)
+        console.log(studentArrayObject)
+    })
 
 }
