@@ -1,7 +1,9 @@
 SBA 308: JavaScript Fundamentals
 
 # Description of Application (done by liz)
-
+have until midnight tonight 
+remember 80% of the requirements is just syntax 
+don't need an else to have a complete if-else statement 
 
 # Reflection (optional)
 
