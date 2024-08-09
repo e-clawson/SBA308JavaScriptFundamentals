@@ -136,7 +136,7 @@ function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions, assignm
             let assignmentWithMatchingIdToSubmissionAssignmentId = assignmentsInfo.find(assignment => assignment.assignment_id === submission.assignment_id)
 
             if (assignmentWithMatchingIdToSubmissionAssignmentId) {
-               let assignmentScore = (submission.submission.score / assignmentWithMatchingIdToSubmissionAssignmentId.points_possible)
+               const assignmentScore = (submission.submission.score / assignmentWithMatchingIdToSubmissionAssignmentId.points_possible)
                assignmentObj[submission.assignment_id] = assignmentScore
             }
     });
