@@ -151,5 +151,3 @@ function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions, assignm
 };
 
 console.log(getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions, assignmentsInfo, studentGradesSorted));
-
-

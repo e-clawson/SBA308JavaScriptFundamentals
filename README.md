@@ -1,17 +1,23 @@
 SBA 308: JavaScript Fundamentals
 
 # Description of Application (done by liz)
-have until midnight tonight 
-remember 80% of the requirements is just syntax 
-don't need an else to have a complete if-else statement 
+This is our first Javascript project for Per Scholas. We have to use a lot of our skills surrounding javascript methods, flow statements, and loops to create a collection of objects that meet the requirements described below. 
+
+to see the returns, open a port, and open a console using the browser inspector 
 
 # Reflection (optional)
 
 - What could you have done differently during the planning stages of your project to make the execution easier?
 
+  I tried to make a plan before I started and it wasn't thorough enough. I think I need to spend more time making step by step plan so that I don't get lost or confused. 
+
 - Were there any requirements that were difficult to implement? What do you think would make them easier to implement in future projects?
 
+  There were so many requirements that were difficult to implement and I wasn't able to implement some of the final conditions around dates. Again, I think having a better step by step plan will help me better implement things in time 
+
 - What would you add to, or change about your application if given more time?
+
+  I would finish the part I didnt get to - I would also try and re-work everything to make it simpler. 
 
 - Use this space to make notes for your future self about anything that you think is important to remember about this process, or that may aid you when attempting something similar again:
 
